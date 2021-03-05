@@ -1,0 +1,29 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "mongoose": "^5.11.10",
+    "mongoose-delete": "^0.5.3",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r ./index.js",
+    "test": "NODE_ENV=test mocha ./tests/*.js --exit",
+    "start": "NODE_ENV=production forever start index.js",
+    "stop": "NODE_ENV=production forever stop index.js"
+  },
+  "author": "pudji",
+  "license": "ISC"
+}

@@ -1,0 +1,44 @@
+# We have 2 stage Test and Deploy
+stages:
+  - test
+  - deploy
+
+# Config cache
+cache:
+  paths:
+    - node_modules/
+
+# Test job
+test:
+  # Docker image
+  image: node:latest
+  # Attach Test job to Test stage
+  stage: test
+  # Config to use GitLab Shared Runner with Executor Docker
+  tags:
+    - docker
+  script:
+    - npm install
+    # - npm run test
+  # Defines the names of branches and tags the job runs for
+  only:
+    - campaign-microservice
+    
+# Deploy job
+deploy:
+  type: deploy
+  # Attach Deploy job to Deploy stage
+  stage: deploy
+  # Config to use our Runner with Executor Shell
+  tags:
+    - user-microservice
+  script:
+    # Only copy changed files to project folder
+    - cp -r -u * ./environments/.env.production $PROJECT_DIR_CAMPAIGN
+    - cd $PROJECT_DIR_CAMPAIGN
+    - npm install
+    # Restart NodeJS service
+    - npm run stop || true
+    - npm run start
+  only:
+    - campaign-microservice

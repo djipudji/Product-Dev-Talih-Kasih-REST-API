@@ -1,0 +1,28 @@
+{
+  "development": {
+    "username": "herubeno",
+    "password": "Hb121722",
+    "database": "user_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "test": {
+    "username": "herubeno",
+    "password": "Hb121722",
+    "database": "user_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "Hb121722",
+    "database": "user_production",
+    "port": 3306,
+    "host": "tali-kasih.cehmjzfwnopc.ap-southeast-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": "Amazon RDS"
+    }
+  }
+}

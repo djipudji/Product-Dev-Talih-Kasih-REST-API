@@ -1,0 +1,33 @@
+{
+  "name": "admin-microservice",
+  "version": "1.0.0",
+  "description": "TEAM TALIKASIH BACKEND",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.3.5",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r ./index.js",
+    "test": "NODE_ENV=test mocha ./tests/*.js --exit",
+    "start": "NODE_ENV=production forever start index.js",
+    "stop": "NODE_ENV=production forever stop index.js"
+  },
+  "author": "Heru Benowo",
+  "license": "ISC"
+}
